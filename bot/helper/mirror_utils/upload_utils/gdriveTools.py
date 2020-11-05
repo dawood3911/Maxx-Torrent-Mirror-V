@@ -337,7 +337,7 @@ class GoogleDriveHelper:
                 buttons = button_build.ButtonMaker()
                 buttons.buildbutton("🌍 𝗚-𝗗𝗥𝗜𝗩𝗘 𝗨𝗥𝗟", self.__G_DRIVE_BASE_DOWNLOAD_URL.format(file.get("id")))
                 try:
-                    msg += f'\n\n<b>○ 💾 Total Size :</b> <code>{get_readable_file_size(int(meta.get("size")))}</code>\n\n🔹#Cloned To G-Drive Done✔️\n\n⛔ 𝗗𝗢 𝗡𝗢𝗧 𝗦𝗛𝗔𝗥𝗘 𝗧𝗛𝗘 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 𝗔𝗡𝗬𝗪𝗛𝗘𝗥𝗘 𝗘𝗟𝗦𝗘!\n\n<b>○🛡️𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆:: @MDH_HINDI</b>'
+                    msg += f'\n\n<b>○ 💾 Total Size :</b> <code>{get_readable_file_size(int(meta.get("size")))}</code>\n\n🔹#Cloned To G-Drive Done✔️\n\n⛔ 𝗗𝗢 𝗡𝗢𝗧 𝗦𝗛𝗔𝗥𝗘 𝗧𝗛𝗘 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞 𝗔𝗡𝗬𝗪𝗛𝗘𝗥𝗘 𝗘𝗟𝗦𝗘!\n\n<b>○🛡️𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗕𝘆:: @Islam_Dawood</b>'
                 except TypeError:
                     pass
                 if INDEX_URL is not None:
