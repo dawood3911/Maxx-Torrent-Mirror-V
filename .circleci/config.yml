@@ -5,7 +5,7 @@ orbs:
 
 jobs:
   build:
-    docker: Dockerfile
+    docker: /Dockerfile
     executor: python/default
     steps:
       - checkout
