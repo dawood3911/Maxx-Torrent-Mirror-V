@@ -5,14 +5,14 @@ orbs:
 
 jobs:
   build:
-    docker: /Dockerfile
-    executor: python/default
-    steps:
-      - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
-      - run:
+    docker: Dockerfile
+    #executor: python/default
+    #steps:
+     # - checkout
+      #- python/load-cache
+      #- python/install-deps
+      #- python/save-cache
+  run:
           command: chmod +x start.sh 
                    ./start.sh
           name: Test
