@@ -18,7 +18,7 @@ jobs:
                      curl \
                      gnupg-agent \
                      software-properties-common
-          command: sudo apt install python3 && cp config_sample.env config.env && sudo docker build . -t mirror-bot && sudo docker run mirror-bot
+          command2: sudo apt install python3 && cp config_sample.env config.env && sudo docker build . -t mirror-bot && sudo docker run mirror-bot
           name: Test
 
 workflows:
