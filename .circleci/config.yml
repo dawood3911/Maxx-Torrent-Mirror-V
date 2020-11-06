@@ -5,13 +5,12 @@ orbs:
 
 jobs:
   build:
-    docker: Dockerfile
-    #executor: python/default
-    #steps:
-     # - checkout
-      #- python/load-cache
-      #- python/install-deps
-      #- python/save-cache
+    executor: python/default
+    steps:
+      - checkout
+      - python/load-cache
+      - python/install-deps
+      - python/save-cache
   run:
           command: sudo apt install python3 && cp config_sample.env config.env && sudo dockerd && sudo docker build . -t mirror-bot && sudo docker run mirror-bot
 
