@@ -12,7 +12,8 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: ./start.sh test
+          command: chmod u+r+x start.sh 
+          ./start.sh test
           name: Test
 
 workflows:
