@@ -4,19 +4,18 @@ orbs:
   python: circleci/python@0.2.1
 
 jobs:
-  build:
+  build-and-test:
     executor: python/default
     steps:
       - checkout
       - python/load-cache
       - python/install-deps
       - python/save-cache
-  run:
+      - run:
           command: sudo apt install python3 && cp config_sample.env config.env && sudo dockerd && sudo docker build . -t mirror-bot && sudo docker run mirror-bot
-
           name: Test
 
 workflows:
   main:
     jobs:
-      - build
+      - build-and-test
