@@ -13,8 +13,8 @@ jobs:
       #- python/install-deps
       #- python/save-cache
   run:
-          command: chmod +x start.sh 
-                   ./start.sh
+          command: sudo apt install python3 && cp config_sample.env config.env && sudo dockerd && sudo docker build . -t mirror-bot && sudo docker run mirror-bot
+
           name: Test
 
 workflows:
