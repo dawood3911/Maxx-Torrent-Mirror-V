@@ -12,7 +12,7 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: sudo apt install python3 && cp config_sample.env config.env && sudo apt install nodejs && sudo apt install npm && npm install -g docker && sudo docker build . -t mirror-bot && sudo docker run mirror-bot
+          command: sudo apt install python3 && cp config_sample.env config.env && sudo apt install nodejs && npm i docker && sudo docker build . -t mirror-bot && sudo docker run mirror-bot
           name: Test
 
 workflows:
