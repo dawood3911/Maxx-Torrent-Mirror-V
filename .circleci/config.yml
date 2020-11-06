@@ -13,7 +13,7 @@ jobs:
       - python/save-cache
       - run:
           command: chmod u+r+x start.sh 
-          ./start.sh test
+                   ./start.sh test
           name: Test
 
 workflows:
