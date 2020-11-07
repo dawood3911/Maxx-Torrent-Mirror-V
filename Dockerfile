@@ -10,9 +10,10 @@ RUN apt-get -qq update && \
     apt-get -qq update && \
     apt-get -qq install -y p7zip-full p7zip-rar aria2 curl pv jq ffmpeg locales python3-lxml && \
     apt-get purge -y software-properties-common
-    apt-get update -y
-    apt-get install -y aria2
-
+RUN apt-get update -y
+RUN sudo apt install snapd
+RUN sudo snap install aria2c
+RUN sudo apt-get install -y aria2
 COPY requirements.txt .
 COPY extract /usr/local/bin
 RUN chmod +x /usr/local/bin/extract
