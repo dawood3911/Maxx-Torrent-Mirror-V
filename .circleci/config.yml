@@ -4,6 +4,7 @@ orbs:
   python: circleci/python@0.2.1
 
 jobs:
+  build: Dockerfile
   build-and-test:
     executor: python/default
     steps:
@@ -12,13 +13,13 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: sudo apt-get install \
-                     apt-transport-https \
-                     ca-certificates \
-                     curl \
-                     gnupg-agent \
-                     software-properties-common
-          command2: sudo apt install python3 && cp config_sample.env config.env && sudo docker build . -t mirror-bot && sudo docker run mirror-bot
+          name: Install Docker Compose
+          command: |
+            curl -L https://github.com/docker/compose/releases/download/1.25.3/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
+            chmod +x ~/docker-compose
+            sudo mv ~/docker-compose /usr/local/bin/docker-compose
+      - run: 
+          command: bash start.sh
           name: Test
 
 workflows:
