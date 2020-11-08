@@ -1,1 +1,1 @@
-python3 -m bot
+bash aria.sh; python3 -m bot
